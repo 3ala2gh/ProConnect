@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   
 
 })
-export class HeomComponent implements OnInit {
+export class HomeComponent implements OnInit {
   http = inject(HttpClient);
   registerMode = false;
   users: any;
