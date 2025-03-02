@@ -14,12 +14,12 @@ public class TokenService(IConfiguration congig) : ITokenService
     {
         var tokenKey = congig["TokenKey"] ?? throw new Exception("cannot access tokenKey from appsettings");
         if (tokenKey.Length <64) throw new Exception("TokenKey must be at least 64 characters long");
-
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey));
 
         var claims = new List<Claim>
         {
-            new (ClaimTypes.NameIdentifier, user.UserName)
+            new (ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new(ClaimTypes.Name,user.UserName)
         };
 
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
