@@ -30,7 +30,7 @@ export class MessagesComponent implements OnInit{
   }
 
   deleteMessage(id: number){
-    this.messageService.deleteMEssage(id).subscribe({
+    this.messageService.deleteMessage(id).subscribe({
       next: _ => 
         this.messageService.paginatedResult.update(prev => {
           if(prev && prev.items){

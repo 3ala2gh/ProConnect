@@ -22,6 +22,7 @@ public class MessagesController : BaseApiController
         _messageRepository = messageRepository;
         _userRepository = userRepository;
         _mapper = mapper;
+
     }
 
     [HttpPost]

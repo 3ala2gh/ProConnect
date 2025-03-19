@@ -4,9 +4,8 @@ using API.Data;
 using API.Helpers;
 using API.Interfaces;
 using API.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using API.SignalR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 namespace API.Extensions;
 
@@ -30,7 +29,8 @@ public static class ApplicationServiceExtensions
         services.AddScoped<LogUserActivity>();
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
-
+        services.AddSignalR();
+        services.AddSingleton<PresenceTracker>();
 
 
         return services;
