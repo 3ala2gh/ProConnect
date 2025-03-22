@@ -1,1 +1,4 @@
-{}
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/9e0147ff-18ad-4614-83f4-cf27f8615905/resourceGroups/PR-Course/providers/Microsoft.Web/sites/connectwebapp",
+    "appService.deploySubpath": "API\\bin"
+}
